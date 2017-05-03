@@ -1,0 +1,623 @@
+@font-face{
+    font-family: OpenSans;
+	src: url('/fonts/OpenSans-Regular.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/OpenSans-Regular.eot?#ie') format('embedded-opentype'),
+		 url('/fonts/OpenSans-Regular.woff2') format('woff2'), /* Modern Browsers */
+		 url('/fonts/OpenSans-Regular.woff') format('woff'),
+		 url('/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: OpenSans-Bold;
+	src: url('/fonts/OpenSans-Bold.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/OpenSans-Bold.eot?#ie') format('embedded-opentype'),
+		 url('/fonts/OpenSans-Bold.woff2') format('woff2'), /* Modern Browsers */
+		 url('/fonts/OpenSans-Bold.woff') format('woff'),
+		 url('/fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+html { 
+  height: 100%;
+}
+
+body {
+  margin: 0em;
+  padding: 0;
+  height:100%;
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#content {
+	padding-bottom: 4em;
+	text-align: center;
+	min-height: 100%;
+	display: flex;
+	display: flexbox;
+	display: box;
+}
+
+#reset {
+	display: inline-block;
+	text-align: initial;
+	min-width: 85%;
+	min-height: 100%;
+	margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+  min-height: 3.5em;
+  margin-bottom: 4.375em;
+}
+
+.logo {
+  height: 3.5em;
+  width: 100%;
+}
+
+.brand {
+  height: 100%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.brand a
+{
+	display: inline-block;
+	height: 100%;
+	padding-left: 3.5em;
+	white-space: nowrap;
+	line-height: 3.3125em;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+#topMenu {
+	position: absolute;
+	top: -1.125em;
+	right: 0em;
+}
+
+.siteMenuTopItem
+{
+	border: none;
+	background: none;
+	font-size:1em;
+}
+button::-moz-focus-inner, 
+input[type="button"]::-moz-focus-inner, 
+input[type="submit"]::-moz-focus-inner, 
+input[type="reset"]::-moz-focus-inner {
+  padding: 0 !important;
+  border: 0 none !important;
+}
+
+@-webkit-keyframes simpleFade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes simpleFade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes simpleFade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes simpleFade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+	
+@media screen and (min-width: 750px)
+{
+	#reset
+	{
+		max-width: 95%;
+	}
+	
+	.menuButton
+	{
+		display: none;
+	}
+	
+	.siteMenu
+	{
+		position: relative;
+		list-style:none;
+		right: 0em;
+		height: 3.5em;
+		float: left;
+	}
+	.siteMenuTopItem
+	{
+		display: inline-block;
+		width: 7.8125em;
+		min-height: 1.5em;
+		text-align: center;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		cursor: pointer;
+		height: 54px;
+	}
+	
+	.siteMenu a
+	{
+		line-height: 3.125em;
+	}
+	
+	.siteMenuItem button
+	{
+		height: 3.2em;
+	}
+
+	.siteMenuItem, .siteMenuItemLast
+	{
+		position: relative;
+		float: left;
+		/*padding-bottom: 0.125em;*/
+	}
+
+	/*--- DROPDOWN ---*/
+	.siteMenu ul
+	{
+		position:absolute;
+		left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+		padding:0em;
+		margin:0em;
+		z-index: 9999;
+	}
+	.siteMenu ul li
+	{
+		list-style: none;
+		display: list-item;
+		padding-top:0.0625em; /* Introducing a padding between the li and the a give the illusion spaced items */
+		float:none;
+	}
+	.siteMenu ul a
+	{
+		white-space: nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+		text-align: left;
+	}
+	.siteMenu li:hover ul, /* Display the dropdown on hover */
+	.siteMenu button:focus ~ ul,
+	.siteMenuItem ul li a:focus ~ ul
+	{
+		position: absolute;
+		display: block;
+		top: 4em;
+		left:-0.125em; /* Bring back on-screen when needed */
+		white-space: nowrap;
+		min-width: 100%;
+		-webkit-animation: simpleFade 0.20s;
+		-moz-animation:    simpleFade 0.20s;
+		-o-animation:      simpleFade 0.20s;
+		animation:         simpleFade 0.20s;
+	}
+	
+	.siteMenuItem ul li, .siteMenuItemLast ul li
+	{
+		padding: 0em;
+	}
+
+	.siteMenuItem ul li a, .siteMenuItemLast ul li a
+	{
+		display: inline-block;
+	}
+	.siteMenuItem ul li a span, .siteMenuItemLast ul li a span
+	{
+		height: 100%;
+		vertical-align: middle;
+		padding: 0.3125em;
+	}
+	.siteMenuItem li:hover a /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+	{
+		text-decoration:none;
+		width: 100%;
+	}
+	.siteMenuItem li:hover ul a /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+	{
+		text-decoration:none;
+		width: 100%;
+	}
+	.siteMenuItem li:hover ul li a:hover /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	{ 
+
+	}
+	
+	.rtbCol
+	{
+		width: 90%;
+	}
+	
+	.messageBox
+	{
+		/*
+		border: solid 2px #2b5c5c;
+		width: 90%;*/
+	}
+	
+	.rtbTable td
+	{
+		padding: 0.3125em;
+	}
+}
+	
+@media only screen and (max-width: 750px)
+{
+	#reset
+	{
+		width: 100%;
+	}
+	
+	.menuButton 
+	{
+		height: 30px;
+		/*padding: 8px 10px 0 38px;*/
+		width: 36px;
+		cursor: pointer;
+		display: block;
+		position: relative;
+		top: 30px;
+		right: 5px;
+		float: left;
+	}
+	
+	.siteMenu 
+	{
+		clear: both;
+		width: 160px;
+		z-index: 10000;
+		padding: 1px;
+		margin: 0em;
+		position: absolute;
+		top: 65px;
+		left: -9999px;
+		list-style: none;
+	}
+	
+	.siteMenu:after
+	{
+		top: -10px;
+		right: 60px;
+		bottom: auto;
+		left: auto;
+		content: "";
+		position: absolute;
+		border-width: 0 10px 10px;
+		display: block;
+		width: 0; 
+	}
+	.loggedOut:after
+	{
+		right: 4px;
+	}
+	
+	.siteMenu:hover,
+	.menuButton:focus + .siteMenu /* Display the dropdown on hover */
+	{
+		position: absolute;
+		right: 7px;
+		left: auto;
+		-webkit-animation: simpleFade 0.20s;
+		-moz-animation:    simpleFade 0.20s;
+		-o-animation:      simpleFade 0.20s;
+		animation:         simpleFade 0.20s;
+	}
+	
+	.siteMenuTopItem
+	{
+		text-align: center;
+		cursor: default;
+	}
+	
+	.siteMenuItem a
+	{
+		width: 100%;
+		display: inline-block;
+		line-height: 3.125em;
+		padding-left: 1em;
+	}
+	
+	.siteMenu li
+	{
+		list-style: none;
+	}
+	.siteMenuItem a
+	{
+		display: inline-block;
+		min-width: 100%;
+		min-height: 100%;
+	}
+	.siteMenuItem ul
+	{
+		padding: 0em;
+		margin: 0em;
+	}
+	.siteMenuItem button
+	{
+		width: 100%;
+		text-align: center;
+	}
+	
+	.rtbCol
+	{
+		width: 100%;
+	}
+	
+	.messageBox
+	{
+		width: 100%;
+	}
+	
+	.rtbTable, .rtbTable thead, .rtbTable tbody, .rtbTable th, .rtbTable td, .rtbTable tr
+	{
+		display: block;
+	}
+	
+	.rtbTable thead, .rtbTable th
+	{
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.rtbTable td::before
+	{
+		position: absolute;
+		left: 6px;
+		padding-left: 10px;
+	}
+	
+	.rtbTableMobileLabels td
+	{
+		padding-left: 35%;
+	}
+	
+	.rtbTable tr
+	{
+		margin-bottom: 3px;
+	}
+	
+	.rtbStatsListeners
+	{
+		display: none;
+	}
+	
+	.rtbStatsRank
+	{
+		display: none;
+	}
+}
+
+	/* User Menu */
+	
+	.siteUserMenu
+	{
+		position: relative;
+		list-style:none;
+		right: 0em;
+		height: 3.5em;
+		float: left;
+		display: inline-block;
+		min-height: 24px;
+		text-align: left;
+		padding: 0em;
+	}
+	
+	.siteUserMenuItem
+	{
+		width: 3.5em;
+		height: 3.5em;
+	}
+	
+	.siteUserMenuImage
+	{
+		position: relative;
+		top: 7px;
+		left: 7px;
+		width: 42px;
+		height: 42px;
+		background-size: 44px;
+		-moz-border-radius: 15%;
+		border-radius: 15%;
+		text-align: center;
+	}
+
+	/*--- DROPDOWN ---*/
+	.siteUserMenu ul
+	{
+		position:relative;
+		left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+		padding:0em;
+		margin:0;
+		z-index: 9999;
+	}
+	.siteUserMenu ul li
+	{
+		list-style: none;
+		display: list-item;
+		padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+		float:none;
+	}
+	.siteUserMenu ul a
+	{
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+	}
+	.siteUserMenu ul a span
+	{
+		display: inline-block;
+		padding-right: 20px;
+		padding-top: 16px;
+		padding-bottom: 14px;
+		padding-left: 10px;
+		white-space: nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+		text-align: left;
+	}
+	.siteUserMenu li:hover ul /* Display the dropdown on hover */
+	{
+		position: absolute;
+		display: block;
+		left: auto;
+		top: 4em;
+		right:0em; /* Bring back on-screen when needed */
+		white-space: nowrap;
+		min-width: 100%;
+		
+		-webkit-animation: simpleFade 0.20s;
+		-moz-animation:    simpleFade 0.20s;
+		-o-animation:      simpleFade 0.20s;
+		animation:         simpleFade 0.20s;
+	}
+
+.rtbCol
+{
+	margin: 0 auto;
+	height: 100%;
+	/*margin-top: -50px;*/
+}
+	
+.messageBox
+{
+	position: relative;
+	padding: 10px;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+.messageBox h2
+{
+	margin-top: 0em;
+}
+
+.messageBox hr
+{
+	border: 0;
+	height: 1px;
+}
+
+#signIn div {
+  max-width: 292px;
+  margin: 0 auto;
+}
+
+#signIn h1 {
+  margin-top: 4%;
+  margin-bottom: 4%;
+  text-align: left;
+}
+
+#signIn div div {
+  width: 100%;
+  text-align: center;
+}
+
+input.rtbInput
+{
+	background: linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
+	border-radius: 3px;
+	border: none;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 13px;
+	color: #222;
+	position: relative;
+	height: 36px;
+	padding: 0 5px 0 5px;
+	max-width: 250px;
+	margin-bottom: 15px;
+}
+
+.rtbAddBtn {
+  background: 12px 11px no-repeat, linear-gradient(to bottom, #b67a00 0%, #740 100%);
+  background-color: rgb(0, 153, 153);
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+  transition: all 0.2s linear;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ddd;
+  position: relative;
+  padding: 13px;
+  max-width: 250px;
+  border: 1px solid #099;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: inline-block;
+  	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+.rtbTable
+{
+	width: 100%;
+}
+
+.rtbScrollable
+{
+	overflow-x: auto;
+}
+
+.siteMessageNotifier
+{
+	position: absolute;
+	bottom: 0em;
+	left: 0em;
+	padding: 8px;
+	z-index: 9999;
+	cursor: default;
+}
+
+.siteMessageNotifier:hover + .siteMessage, .siteMessage:hover
+{
+	left: 5px;
+}
+
+.siteMessage
+{
+	position: absolute;
+	left: -99999px;
+	padding: 5px;
+	bottom: 30px;
+	width: 90%;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow-y: auto;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.progressBar
+{
+	height: 36px;
+}
+
+#footer
+{
+  position: absolute;
+  bottom: 0em;
+  height: 32px;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+    user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+ }
