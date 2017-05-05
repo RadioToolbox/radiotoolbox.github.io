@@ -7,6 +7,15 @@
 <link rel="shortcut icon" href="/favicon.ico" />
 <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
 <link type="text/css" rel="stylesheet" href="/stylesheets/rtb.css" />
+<script>
+    (function(){
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
 </head>
 <body>
 <div id="wrapper">
